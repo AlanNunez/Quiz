@@ -1,4 +1,4 @@
-//
+
 //  ViewController.swift
 //  Quiz
 //  Copyright © 2018 com.example.flia. All rights reserved.
@@ -33,17 +33,24 @@ class ViewController: UIViewController {
         let answer: String = answers[currentQuestionIndex]
         answerLabel.text = answer
     }
-    
+    func animatedLabelTransitions()
+    {
+        let animationClosure = { () -> Void in
+            self.questionLabel.alpha = 1
+        }
+        UIView.animate(withDuration: 0.5, animations: animationClosure)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         questionLabel.text = questions[currentQuestionIndex]
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        questionLabel.alpha = 0
+    }
 }
 
