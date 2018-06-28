@@ -35,11 +35,11 @@ class ViewController: UIViewController {
     }
     func animatedLabelTransitions()
     {
-        let animationClosure = { () -> Void in
-            self.questionLabel.alpha = 1
-        }
-        UIView.animate(withDuration: 0.5, animations: animationClosure)
+            UIView.animate(withDuration: 0.5, animations: {() -> Void in
+                self.questionLabel.alpha = 1
+            })
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         questionLabel.text = questions[currentQuestionIndex]
