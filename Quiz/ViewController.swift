@@ -1,8 +1,6 @@
 //
 //  ViewController.swift
 //  Quiz
-//
-//  Created by Cristopher Nunez on 7/5/18.
 //  Copyright © 2018 com.example.flia. All rights reserved.
 //
 
