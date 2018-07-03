@@ -39,6 +39,8 @@ class ViewController: UIViewController {
     }
     func animatedLabelTransitions()
     {
+        view.layoutIfNeeded()
+        
         let screenWidth = view.frame.width
         self.nextQuestionLabelCenterXConstraint.constant = 0
         self.currentQuestionLabelCenterXConstraint.constant += screenWidth
@@ -56,7 +58,6 @@ class ViewController: UIViewController {
                          swap(&self.currentQuestionLabelCenterXConstraint, &self.nextQuestionLabelCenterXConstraint)
                     self.updateOffScreenLabel()
                 })
-
     }
     func updateOffScreenLabel()
     {
